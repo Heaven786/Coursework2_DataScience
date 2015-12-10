@@ -1,0 +1,11 @@
+use coursework2;
+db.createCollection("mydata");
+db.createUser(
+{
+user: "heaven",
+pwd: "re31VoN6814",
+roles: [ role: "readWrite" ]
+}
+)
+
+mongoimport -h localhost:27017 -d coursework2 -c mydata -u heaven -p re31VoN6814 --file microblogDataset_COMP6235_CW2.csv --type csv --headerline
